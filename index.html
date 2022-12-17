@@ -16,7 +16,7 @@
       <h2>Clothing Store</h2>
     </a>
 
-    <a href="cart.html">
+    <a href="cart.html" onclick="filterthecart()">
       <div class="cart">
         <i class="bi bi-cart2"></i>
         <div id="cartAmount" class="cartAmount">0</div>
@@ -31,5 +31,10 @@
 </body>
 <script src="src/Data.js"></script>
 <script src="src/Main.js"></script>
-
+<script>
+  // let cart=JSON.parse(localStorage.getItem("data") ) || []
+  cart=cart.filter((x)=>x.item!=0)
+  localStorage.setItem("data",JSON.stringify(cart))
+  
+  </script>
 </html>
